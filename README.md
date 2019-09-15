@@ -45,4 +45,6 @@ In your Terminal, cd to instance folder.
 
 	
 	Use the terraform.tfvars file to provide variable.
+	
+	
 
