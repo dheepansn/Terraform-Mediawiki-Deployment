@@ -38,7 +38,7 @@
 
 In your Terminal, cd to instance folder. 
 
-Run:
+### Run: ###
 	 terraform init
 	 terraform plan
 	 terraform apply
