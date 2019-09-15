@@ -33,11 +33,12 @@ Configuration to save TFSTATE in S3 Bucket.
 	  }
 	}
 
-Steps to run this project:
+## Steps to run this project: ##
 
 In your Terminal, cd to instance folder. Run:
-terraform init
-terraform plan
-terraform apply
-Use the terraform.tfvars file to provide variable of Terraform.
+	* terraform init
+	* terraform plan
+	* terraform apply
+
+Use the terraform.tfvars file to provide variable.
 
