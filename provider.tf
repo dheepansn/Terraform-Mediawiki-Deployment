@@ -9,7 +9,7 @@ terraform {
     bucket  = "mediawikitesting"
     key     = "nvirginia/mediawiki/terraform.tfstate"
     region  = "us-east-1"
-    profile = "986148801171"
+    profile = "<Profile_Name>"   // Please provide your Profile Name Here
   }
 }
 
