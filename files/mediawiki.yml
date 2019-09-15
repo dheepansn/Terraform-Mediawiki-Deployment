@@ -1,0 +1,77 @@
+---
+- hosts: localhost
+  gather_facts: no
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: "Install necessary Package"
+      yum:
+        name: "{{ packages }}"
+      vars:
+        packages:
+        - httpd
+        - MySQL-python
+        - php
+        - php-mysql
+        - php-gd
+        - php-xml
+        - php-mbstring
+
+    - name: Put SELinux in permissive mode, logging actions that would be blocked.
+      selinux:
+        policy: targeted
+        state: permissive
+
+    - name: "Service start Packages"
+      service:
+        name: "{{ item }}"
+        state: started
+      with_items:
+        - httpd
+
+    - name: Download MediaWiki
+      get_url:
+        url: http://releases.wikimedia.org/mediawiki/1.24/mediawiki-1.24.1.tar.gz
+        dest: /tmp/mediawiki.tgz
+
+    - name: Download MediaWiki Signature
+      get_url:
+        url: https://releases.wikimedia.org/mediawiki/1.33/mediawiki-1.33.0.tar.gz.sig
+        dest: /tmp/
+
+#    - name: Command to execute
+#      command: gpg --verify /tmp/mediawiki-1.33.0.tar.gz.sig /tmp/mediawiki-1.33.0.tar.gz
+
+    - name: Unarchive MediaWiki
+      unarchive:
+        src: /tmp/mediawiki.tgz
+        dest: /var/www/
+
+    - name: Create a symbolic link
+      file:
+        src: /var/www/mediawiki-1.24.1/
+        dest: /var/www//mediawiki
+        owner: apache
+        group: apache
+        state: link
+
+    - name: Command to execute
+      command: cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.bkp
+
+    - name: Command to execute
+      command:  cp /tmp/httpd.conf /etc/httpd/conf/httpd.conf
+
+    - name: "Service start Packages"
+      service:
+        name: "{{ item }}"
+        state: restarted
+      with_items:
+        - httpd
+
+    - name: "Service Enabled"
+      systemd:
+        name: "{{ item }}"
+        state: restarted
+      with_items:
+        - httpd
