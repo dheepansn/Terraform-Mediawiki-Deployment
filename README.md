@@ -29,7 +29,7 @@ Configuration to save TFSTATE in S3 Bucket.
 	    bucket  = "mediawikitesting"
 	    key     = "nvirginia/mediawiki/terraform.tfstate"
 	    region  = "us-east-1"
-	    profile = "986148801171"   # Profile name Should be Matching *************
+	    profile = "<Profile_Name>"   # Provide your Profile Name Here
 	  }
 	}
 
