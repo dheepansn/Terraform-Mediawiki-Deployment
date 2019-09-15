@@ -18,6 +18,7 @@
 # Pre-requisite #
 
 ### It is mandatory to setup the following before trigger terraform init. ###
+	1. 
 	- IAM User Should be created to access EC2FullAccess, S3FullAccess, VPCFullAccess.
 	- AWS Configure Should be configured with ACCESS_KEY, SECRET_KEY.
 	- S3BUCKETNAME = "mediawikitesting" Should be created on AWS Account.
