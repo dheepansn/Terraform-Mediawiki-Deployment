@@ -37,9 +37,9 @@
 ## Steps to run this project: ##
 
 In your Terminal, cd to instance folder. Run:
-	``` terraform init
-	terraform plan
-	terraform apply ```
+	`terraform init`
+	`terraform plan`
+	`terraform apply`
 
 Use the terraform.tfvars file to provide variable.
 
