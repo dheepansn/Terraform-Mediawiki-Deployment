@@ -46,3 +46,13 @@ In your Terminal, cd to instance folder.
 	
 	Use the terraform.tfvars file to provide variable.
 
+### Troubelshooting ###
+
+	1) If the get the below error, Open `provider.tf` file and add Profile name correctly.
+
+		Error configuring the backend "s3": NoCredentialProviders: no valid providers in chain. Deprecated.
+		For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+
+		Please update the configuration in your Terraform files to fix this error
+		then run this command again.
+
