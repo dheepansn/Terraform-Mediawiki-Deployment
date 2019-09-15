@@ -19,9 +19,9 @@
 
 ### It is mandatory to setup the following before trigger terraform init. ###
 	 
-	 IAM User Should be created to access EC2FullAccess, S3FullAccess, VPCFullAccess.
-	 AWS Configure Should be configured with ACCESS_KEY, SECRET_KEY.
-	 S3BUCKETNAME = "mediawikitesting" Should be created on AWS Account.
+	 1) IAM User Should be created to access EC2FullAccess, S3FullAccess, VPCFullAccess.
+	 2) AWS Configure Should be configured with ACCESS_KEY, SECRET_KEY.
+	 3) S3BUCKETNAME = "mediawikitesting" Should be created on AWS Account.
 
 ### Configuration to save TFSTATE in S3 Bucket. ###
 
@@ -37,9 +37,9 @@
 ## Steps to run this project: ##
 
 In your Terminal, cd to instance folder. Run:
-	 _ terraform init
-	 _ terraform plan
-	 _ terraform apply
+	 terraform init
+	 terraform plan
+	 terraform apply
 
 	
 	Use the terraform.tfvars file to provide variable.
