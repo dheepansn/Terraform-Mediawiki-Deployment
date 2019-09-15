@@ -1,4 +1,6 @@
-### This terraform code will deploy following resources.
+# Terraform MediaWiki Deployment #
+
+## This terraform code will deploy following resources. ##
 	1) VPC
 	2) Subnet
 	3) Routingtable
@@ -13,9 +15,9 @@
 	12) Terraform User-Data is used to deploy MariaDB on MediaWiki Database Server
 	13) Terraform State File is being saved in AWS S3 Bucket with Versioning Enabled. So that, All the previous TFSTATE will be saved.
 
-### Pre-requisite ###
+# Pre-requisite #
 
-# It is mandatory to setup the following before trigger terraform init.
+### It is mandatory to setup the following before trigger terraform init. ###
 	> IAM User Should be created to access EC2FullAccess, S3FullAccess, VPCFullAccess.
 	> AWS Configure Should be configured with ACCESS_KEY, SECRET_KEY.
 	> S3BUCKETNAME = "mediawikitesting" Should be created on AWS Account.
@@ -31,5 +33,11 @@ Configuration to save TFSTATE in S3 Bucket.
 	  }
 	}
 
+Steps to run this project:
+
+In your Terminal, cd to instance folder. Run:
+terraform init
+terraform plan
+terraform apply
 Use the terraform.tfvars file to provide variable of Terraform.
 
